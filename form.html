@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <style>
+            body{
+                border: 2px solid black;
+            }
+        </style>
+        <script>
+            function handleKeyPress(event, textarea) {
+                if (event.key === "Enter") {
+                    event.preventDefault();
+                    var currentLines = textarea.value.split('\n').filter(Boolean);
+                    var nextNumber = currentLines.length + 1;
+                    textarea.value += (nextNumber === 1 ? '' : '\n') + nextNumber + '. ';
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <form>
+            <label >Name</label><br> 
+            <input type="text" value="Darshan A L"><br><br>
+           
+            <label>Email</label><br> 
+            <input type="text" value="darshanal2616@gmail.com"><br><br>
+           
+            <label>Phone</label><br> 
+            <input type="text" value="8892554231"><br><br>
+           
+            <label>Linkedin</label><br> 
+            <input type="text"><br><br>
+            <label style="background-color: yellow ; font-size: larger;">Skills</label><br>
+            <textarea name="numberedList" rows="4" cols="50" onkeydown="handleKeyPress(event, this)" placeholder="Enter items on each line"></textarea><br><br>
+            <label style="background-color: yellow;font-size: larger;">Exp</label><br>
+            <textarea name="numberedList" rows="4" cols="50" onkeydown="handleKeyPress(event, this)" placeholder="Enter items on each line"></textarea><br><br>
+        </form>
+    </body>
+</html>
