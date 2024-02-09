@@ -1,0 +1,34 @@
+<html>
+<head>
+
+</head>
+<body>
+    <h2>
+        <p>
+        Enter your Age
+        </p>
+      <input id = "age" value ="18" onkeyup="handleEnter(event)">
+      <button onclick = "agefn()"> check</button>
+      <script>
+      function agefn(){
+        let age,eligible;
+        age = Number(document.getElementById("age").value);
+        if (isNaN(age) || (age<18)){
+            eligible="eneter the number above = >18"
+            setTimeout(function(){
+                document.getElementById("age").value="";
+            },10)
+        }
+        else {
+            eligible = "You are eligible"
+        }
+        alert(eligible);
+      }
+      function handleEnter(event){
+        if(event.key=="Enter"){
+            agefn();
+        }
+      }
+    </script>
+</body>
+</html>
