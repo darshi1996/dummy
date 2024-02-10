@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+</head>
+<body>
+    <input id="x" onkeydown="handleKeyPress(event)">
+    <button id="check" onclick="age()" >
+        Check
+    </button>
+
+    <script>
+        function age() {
+            let x, msg;
+
+            x = parseInt(document.getElementById('x').value);
+            if (x > 10) {
+                switch (x) {
+                    case 12:
+                        msg = 'You can go to the 1st std';
+                        break;
+                    case 13:
+                        msg = 'You cannot go to the 2nd std';
+                        break;
+                    default:
+                        msg = 'You are eligible, but the standard is not specified.';
+                }
+                alert(msg);
+            } else {
+                msg = "You are not eligible";
+                alert(msg);
+            }
+        }
+
+        function handleKeyPress(event) {
+            if (event.key == "Enter") {
+                age();
+            }
+        }
+    </script>
+</body>
+</html>
