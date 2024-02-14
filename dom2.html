@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Task 6</title>
+    <style>
+        #myDiv {
+            width: 100px;
+            height: 100px;
+            background-color: lightblue;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="myDiv"></div>
+    
+    <script>
+        let myDiv = document.getElementById("myDiv");
+
+       function handleMouseEnter (){
+        myDiv.style.backgroundColor="Green";
+       }
+       function handleMouseLeave(){
+        myDiv.style.backgroundColor="lightblue";
+       }
+        // Add event listeners
+        myDiv.addEventListener("mouseenter", handleMouseEnter);
+        myDiv.addEventListener("mouseleave", handleMouseLeave);
+    </script>
+</body>
+</html>
