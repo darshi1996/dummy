@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Task 7</title>
+</head>
+<body>
+    <button id="myButton">Click me!</button>
+    <p id="clickCount">Click count: 0</p>
+
+    <script>
+        let clickCount = 0;
+        let x = document.getElementById("myButton");
+        let y = document.getElementById("clickCount");
+        function z (){
+            clickCount++;
+            y.textContent = "clickCount :"+ clickCount;
+        }
+        x.addEventListener("click",z)
+    </script>
+</body>
+</html>
