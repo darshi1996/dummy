@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Task 5</title>
+</head>
+<body>
+   <p id="text">Helo darshan</p>
+   <input id = "input" type="text" placeholder="Type.....">
+   <script>
+    let x = document.getElementById("text");
+    let y = document.getElementById("input")
+    function update(){
+        x.textContent= y.value;
+
+    }
+    y.addEventListener("input",update)
+   </script>
+</body>
+</html>
