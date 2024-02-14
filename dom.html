@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Task 4</title>
+    <style>
+        .highlight {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <p id="myParagraph">Hello, DOM!</p>
+    <input type="checkbox" id="myCheckbox"> Highlight
+
+    <script>
+        let x = document.getElementById("myParagraph");
+        let checkbox = document.getElementById("myCheckbox");
+
+        function toggleHighlight() {
+            x.classList.toggle("highlight", checkbox.checked);
+        }
+
+        checkbox.addEventListener("change", toggleHighlight);
+    </script>
+</body>
+</html>
