@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Task 11</title>
+</head>
+<body>
+    <input type="text" id="newItemInput" placeholder="Enter new item">
+    <button id="addItemButton">Add Item</button>
+    <ul>
+        <li id="dynamicList"></li>
+    </ul>
+
+    <script>
+        let x = document.getElementById("newItemInput");
+        let y = document.getElementById("addItemButton");
+        let z = document.getElementById("dynamicList");
+
+        y.addEventListener("click", function() {
+            // Get the value entered in the input field
+           
+            // If the input value is not empty, add a new list item
+            if ( x.value.trim() !== "") {
+                // Create a new list item
+                let newElement = document.createElement("li");
+                newElement.textContent = x.value.trim();
+
+                // Append the new list item to the unordered list
+                z.append(newElement);
+
+                // Clear the input field
+                x.value = "";
+            }
+        });
+    </script>
+</body>
+</html>

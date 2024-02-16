@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Task 10 (With Form)</title>
+</head>
+<body>
+    <form id="validationForm">
+        <input type="text" id="inputText" placeholder="Enter text">
+        <button type="submit" id="validateButton">Validate</button>
+    </form>
+
+    <script>
+        let validationForm = document.getElementById("validationForm");
+        let inputText = document.getElementById("inputText");
+
+        validationForm.addEventListener("submit", function (event) {
+            event.preventDefault(); // Prevents the default form submission
+            validateInput();
+        });
+
+        function validateInput() {
+            if (inputText.value === "") {
+                alert("Please enter text.");
+            } else {
+                alert("Text entered: " + inputText.value);
+            }
+        }
+    </script>
+</body>
+</html>
