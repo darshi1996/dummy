@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Task 15</title>
+    <style>
+        /* Add your CSS styles here if needed */
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <form id="passwordForm">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password">
+        <span id="passwordError" class="error"></span>
+
+        <br>
+
+        <label for="confirmPassword">Confirm Password:</label>
+        <input type="password" id="confirmPassword" name="confirmPassword">
+        <span id="confirmPasswordError" class="error"></span>
+
+        <br>
+
+        <input type="submit" value="Submit" id="submit">
+    </form>
+
+    <script>
+        let x = document.getElementById("passwordForm");
+        let y = document.getElementById("password");
+        let z = document.getElementById("confirmPassword");
+        let button = document.getElementById("submit");
+
+        button.addEventListener("click", function (event) {
+            if (z === y) {
+                event.preventDefault();
+                z.focus();
+            }
+        });
+
+        x.addEventListener("submit", function (event) {
+            let yy = y.value.trim();
+            let zz = z.value.trim();
+
+            if (yy === "") {
+                alert("Password cannot be empty");
+                event.preventDefault();
+                y.focus(); // Move focus back to password field
+            } else if (yy.length < 8) {
+                alert("Password must be at least 8 characters long");
+                event.preventDefault();
+                y.focus(); // Move focus back to password field
+            } else if (zz === "") {
+                event.preventDefault();
+                z.focus(); // Move focus to confirmPassword field
+            } else if (zz !== yy) {
+                alert("Passwords do not match");
+                password.value="";
+                confirmPassword.value="";
+                event.preventDefault();
+                z.focus(); // Move focus to confirmPassword field
+            } else {
+                alert("Passwords match");
+            }
+        });
+    </script>
+</body>
+</html>
